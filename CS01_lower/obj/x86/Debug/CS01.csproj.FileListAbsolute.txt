@@ -1,0 +1,8 @@
+C:\Users\Dennis Lira\AppData\Local\Temporary Projects\CS01\bin\Debug\CS01.exe
+C:\Users\Dennis Lira\AppData\Local\Temporary Projects\CS01\bin\Debug\CS01.pdb
+C:\Users\Dennis Lira\AppData\Local\Temporary Projects\CS01\obj\x86\Debug\CS01.csproj.ResolveComReference.cache
+C:\Users\Dennis Lira\AppData\Local\Temporary Projects\CS01\obj\x86\Debug\CS01.Form1.resources
+C:\Users\Dennis Lira\AppData\Local\Temporary Projects\CS01\obj\x86\Debug\CS01.Properties.Resources.resources
+C:\Users\Dennis Lira\AppData\Local\Temporary Projects\CS01\obj\x86\Debug\CS01.csproj.GenerateResource.Cache
+C:\Users\Dennis Lira\AppData\Local\Temporary Projects\CS01\obj\x86\Debug\CS01.exe
+C:\Users\Dennis Lira\AppData\Local\Temporary Projects\CS01\obj\x86\Debug\CS01.pdb
