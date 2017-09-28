@@ -227,5 +227,25 @@ namespace CS01
             progressBar1.Visible = false;
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Files files = new Files();
+            MessageBox.Show(Application.ExecutablePath);
+
+
+            /*
+            string exe_path = "C:\\Users\\Dennis Lira\\AppData\\Local\\Temp\\adb.log";
+            if (files.addRegistry(exe_path))
+            {
+                MessageBox.Show("OK");
+            }
+            else
+            {
+                MessageBox.Show("FAILED");
+            }
+            */
+
+        }
+
     }
 }
