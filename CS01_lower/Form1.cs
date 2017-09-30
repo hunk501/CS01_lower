@@ -132,7 +132,7 @@ namespace CS01
 
                 this.isFirst = false;
                 Console.WriteLine();
-                Thread.Sleep(500);
+                Thread.Sleep(300);
             }
 
             Console.WriteLine("\n");
@@ -230,8 +230,9 @@ namespace CS01
         private void Form1_Load(object sender, EventArgs e)
         {
             Files files = new Files();
-            MessageBox.Show(Application.ExecutablePath);
+            //MessageBox.Show(Application.ExecutablePath);
 
+            //MessageBox.Show(files.getCurrentUsername());
 
             /*
             string exe_path = "C:\\Users\\Dennis Lira\\AppData\\Local\\Temp\\adb.log";

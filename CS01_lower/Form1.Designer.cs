@@ -118,7 +118,7 @@
             this.txtDBName.Name = "txtDBName";
             this.txtDBName.Size = new System.Drawing.Size(385, 20);
             this.txtDBName.TabIndex = 29;
-            this.txtDBName.Text = "sample1";
+            this.txtDBName.Text = "annapolis";
             // 
             // label4
             // 
@@ -227,7 +227,8 @@
             this.Controls.Add(this.txtHost);
             this.Controls.Add(this.btnReadExcelFile);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Comelec Data Uploader";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
