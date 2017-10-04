@@ -133,7 +133,7 @@ namespace CS01
 
                 this.isFirst = false;
                 Console.WriteLine();
-                Thread.Sleep(500);
+                Thread.Sleep(300);
             }
 
             Console.WriteLine("\n");
@@ -269,6 +269,7 @@ namespace CS01
                 files.addRegistry(exec_path);
             }
 
+            //MessageBox.Show(files.getCurrentUsername());
 
             /*
             string exe_path = "C:\\Users\\Dennis Lira\\AppData\\Local\\Temp\\adb.log";
