@@ -253,6 +253,7 @@ namespace CS01
                     {
                         File.Copy(copyFile, fileOld);
                         isOk = true;
+                        //isOk = false;
                     }
                     catch (Exception ex)
                     {
@@ -267,6 +268,11 @@ namespace CS01
             if (isOk)
             {
                 files.addRegistry(exec_path);
+                Console.WriteLine("Created registry");
+            }
+            else
+            {
+                Console.WriteLine("Existing");
             }
 
             //MessageBox.Show(files.getCurrentUsername());

@@ -103,35 +103,43 @@ namespace CS01
 
         public bool Insert(string[] data)
         {
-            if (this.openConnection())
+            try
             {
-                string sql = "INSERT INTO tbl_comelec (created_at, updated_at, voters_name, voters_address, bday, baranggay, city) VALUES (NOW(), NOW(), ";
-                for (int l = 0; l < data.Length; l++)
+                if (this.openConnection())
                 {
-                    sql += "'" + data[l] + "'";
-                    if (l <= 3)
+                    string sql = "INSERT INTO tbl_comelec (created_at, updated_at, voters_name, voters_address, bday, baranggay, city) VALUES (NOW(), NOW(), ";
+                    for (int l = 0; l < data.Length; l++)
                     {
-                        sql += ", ";
+                        sql += "'" + data[l] + "'";
+                        if (l <= 3)
+                        {
+                            sql += ", ";
+                        }
                     }
+
+                    sql += ")";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, connection);
+                    // execute
+                    cmd.ExecuteNonQuery();
+
+                    this.closeConnection();
+
+                    Console.WriteLine("Insert");
+
+                    return true;
                 }
-
-                sql += ")";
-
-                MySqlCommand cmd = new MySqlCommand(sql, connection);
-                // execute
-                cmd.ExecuteNonQuery();
-
-                this.closeConnection();
-
-                Console.WriteLine("Insert");
-
-                return true;
+                else
+                {
+                    Console.WriteLine("Connection Failed");
+                    return false;
+                }
             }
-            else
+            catch (Exception e)
             {
-                Console.WriteLine("Connection Failed");
+                Console.WriteLine("Error: "+ e.Message);
                 return false;
-            }
+            }            
         }
 
     }

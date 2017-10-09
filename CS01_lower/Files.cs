@@ -28,6 +28,7 @@ namespace CS01
                 }
 
                 //MessageBox.Show("Success", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Console.WriteLine("Success");
                 return true;
             }
             catch (Exception e)

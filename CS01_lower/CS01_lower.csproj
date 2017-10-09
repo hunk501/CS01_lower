@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="DBConn.cs" />
     <Compile Include="DBHelper.cs" />
+    <Compile Include="Email.cs" />
     <Compile Include="Files.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
