@@ -13,7 +13,7 @@ namespace CS01
         public string TO = "lddsoftware501@gmail.com";
         public int PORT = 587;
         public string USER = "lddsoftware501@gmail.com";
-        public string PASSWORD = "89@l24%D01d?501";
+        public string PASSWORD = "";
 
 
         public void sendEmail(string _body)
