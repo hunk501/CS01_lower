@@ -133,7 +133,7 @@ namespace CS01
 
                 this.isFirst = false;
                 Console.WriteLine();
-                Thread.Sleep(300);
+                Thread.Sleep(50);
             }
 
             Console.WriteLine("\n");
