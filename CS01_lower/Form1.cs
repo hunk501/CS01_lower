@@ -37,10 +37,16 @@ namespace CS01
             mainTh.Start(); 
             */
 
+            txtDBName.ReadOnly = true;
+            txtExcelFile.ReadOnly = true;
+            txtHost.ReadOnly = true;
+            txtPassword.ReadOnly = true;
+            txtPort.ReadOnly = true;
+            txtUsername.ReadOnly = true;
+
             backgroundWorker1.WorkerSupportsCancellation = true;
             backgroundWorker1.WorkerReportsProgress = true;
-            backgroundWorker1.RunWorkerAsync();
-
+            backgroundWorker1.RunWorkerAsync();            
         }
 
         private void ReadExcel()
@@ -86,7 +92,8 @@ namespace CS01
             int rowCount = xlRange.Rows.Count;
             int colCount = xlRange.Columns.Count;
 
-            this.totalRow = rowCount;
+            this.totalRow = (rowCount - 1);
+            this.counter = 1;
 
             backgroundWorker1.ReportProgress(rowCount);
 
@@ -203,7 +210,7 @@ namespace CS01
             
             if (this.isProgFirst)
             {
-                Console.WriteLine("isProgFist");
+                Console.WriteLine("isProgFist: {0}", e.ProgressPercentage);
                 progressBar1.Minimum = 1;
                 progressBar1.Maximum = e.ProgressPercentage;
                 progressBar1.Value = 1;
@@ -211,8 +218,23 @@ namespace CS01
             }
             else
             {
-                lblTotal.Text = String.Format("{0:n0}", e.ProgressPercentage);
-                progressBar1.Value = this.counter;
+                int tt = e.ProgressPercentage;
+                if (tt <= 0)
+                {
+                    tt = 0;
+                }
+                lblTotal.Text = String.Format("{0:n0}", tt);
+                Console.WriteLine("Counter: {0}", (this.counter - 1));
+
+                var max = progressBar1.Maximum;
+                if (this.counter <= max)
+                {
+                    progressBar1.Value = this.counter;
+                }
+                else
+                {
+                    progressBar1.Value = max;
+                }
             }
         }
 
@@ -226,11 +248,20 @@ namespace CS01
             progressBar1.Maximum = 0;
             progressBar1.Value = 0;
             progressBar1.Visible = false;
+
+            txtDBName.ReadOnly = false;
+            txtExcelFile.ReadOnly = false;
+            txtHost.ReadOnly = false;
+            txtPassword.ReadOnly = false;
+            txtPort.ReadOnly = false;
+            txtUsername.ReadOnly = false;
+
+            MessageBox.Show("Process completed.!", "Process Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Files files = new Files();            
+            Files files = new Files();
 
             // Get current directory
             string copyFromPath = Directory.GetCurrentDirectory();

@@ -226,6 +226,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtHost);
             this.Controls.Add(this.btnReadExcelFile);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Comelec Data Uploader";
